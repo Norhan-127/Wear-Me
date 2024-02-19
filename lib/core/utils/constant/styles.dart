@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 abstract class AppTextStyles{
-  // static final textStyle18 = GoogleFonts.almarai(
-  //   fontSize: 18,
-  //   fontWeight: FontWeight.w600,
-  // );
+  static  TextStyle ralewayMediumTextStyle = TextStyle(
+    fontFamily: 'Raleway',
+    fontWeight: FontWeight.w500,
+  );
 }
