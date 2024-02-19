@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:wear_me/core/router/app_routes.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
 import 'package:wear_me/core/utils/constant/images.dart';
 
@@ -21,6 +23,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         _opacity = 1.0;
       });
     });
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        GoRouter.of(context).pushReplacement(AppRouters.kOnBoarding);
+      },
+    );
   }
 
   @override
@@ -31,34 +39,32 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(gradient: AppColors.gradient),
-          child: Stack(
-            children: [
-              Positioned(
-                top: MediaQuery.of(context).size.height * 0.43,
-                left: MediaQuery.of(context).size.width * 0.2,
-                child: AnimatedOpacity(
-                    opacity: _opacity,
-                    duration: const Duration(seconds: 2),
-                    child: SvgPicture.asset(AppImages.wearMeSplash)),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  SvgPicture.asset(
-                    AppImages.vectorSplash,
-                    fit: BoxFit.fill,
-                  ),
-                ],
-              )
-            ],
-          ),
+      home: Container(
+        decoration: BoxDecoration(gradient: AppColors.gradient),
+        child: Stack(
+          children: [
+            Positioned(
+              top: MediaQuery.of(context).size.height * 0.43,
+              left: MediaQuery.of(context).size.width * 0.2,
+              child: AnimatedOpacity(
+                  opacity: _opacity,
+                  duration: const Duration(seconds: 2),
+                  child: SvgPicture.asset(AppImages.wearMeSplash)),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                SvgPicture.asset(
+                  AppImages.vectorSplash,
+                  fit: BoxFit.fill,
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
