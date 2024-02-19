@@ -11,10 +11,16 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
+  double _opacity = 0.0;
 
   @override
   void initState() {
     super.initState();
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _opacity = 1.0;
+      });
+    });
   }
 
   @override
@@ -33,7 +39,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
               Positioned(
                 top: MediaQuery.of(context).size.height * 0.43,
                 left: MediaQuery.of(context).size.width * 0.2,
-                child: SvgPicture.asset(AppImages.wearMeSplash),
+                child: AnimatedOpacity(
+                    opacity: _opacity,
+                    duration: const Duration(seconds: 2),
+                    child: SvgPicture.asset(AppImages.wearMeSplash)),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
