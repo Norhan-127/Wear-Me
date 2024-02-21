@@ -48,16 +48,16 @@ class SecondPage extends StatelessWidget {
                 ),
               ],
             ),
-            const CustomImageWidget(),
+            const CustomImageWidget(image: AppImages.imageTwo),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.435,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 100),
-                  child: const CustomShadow(dx: -20, dy: -10),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 100),
+                  child: CustomShadow(dx: -20, dy: -10),
                 ),
               ],
             ),

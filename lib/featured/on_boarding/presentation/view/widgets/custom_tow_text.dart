@@ -13,22 +13,22 @@ class CustomTwoText extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.03,
-              right: MediaQuery.of(context).size.width * 0.03),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.12),
           child: Text(
            firstText,
+
             maxLines: 2,
             textAlign: TextAlign.center,
             style: AppTextStyles.ralewayW700.copyWith(
               color: AppColors.whiteColor,
+
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width * 0.05,
-              right: MediaQuery.of(context).size.width * 0.05),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.02935),
           child: Text(
             secondText,
             maxLines: 2,

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
 import 'package:wear_me/featured/on_boarding/presentation/view/widgets/second_page_on_boarding.dart';
+import 'package:wear_me/featured/on_boarding/presentation/view/widgets/third_on_boarding_view.dart';
 import '../../../../../core/utils/constant/images.dart';
 import 'first_page_on_boarding.dart';
 
@@ -43,6 +44,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody>
           children: const [
             FirstPage(),
             SecondPage(),
+            ThirdPageView()
           ],
         ),
         Column(
