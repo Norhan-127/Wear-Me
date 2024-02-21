@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
-import 'package:wear_me/core/utils/constant/styles.dart';
-import 'package:wear_me/core/utils/constant/text.dart';
-
+import 'package:wear_me/featured/on_boarding/presentation/view/widgets/second_page_on_boarding.dart';
 import '../../../../../core/utils/constant/images.dart';
 import 'first_page_on_boarding.dart';
 
@@ -42,7 +40,10 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody>
       children: [
         PageView(
           controller: _pageViewController,
-          children: const [FirstPage()],
+          children: const [
+            FirstPage(),
+            SecondPage(),
+          ],
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -81,4 +82,3 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody>
     );
   }
 }
-

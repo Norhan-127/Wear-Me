@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 
 class CustomShadow extends StatelessWidget {
-  const CustomShadow({Key? key}) : super(key: key);
+  const CustomShadow({Key? key, required this.dx, required this.dy}) : super(key: key);
+  final double dx;
+  final double dy;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
+        color: Colors.transparent,
         shape: BoxShape.rectangle,
-        boxShadow: [
+        borderRadius: BorderRadius.circular(600),
+        boxShadow:  [
           BoxShadow(
             blurRadius: 10,
             blurStyle: BlurStyle.inner,
-            color: Color.fromARGB(0x4D, 0x10, 0x10, 0x10),
+            color: const Color.fromARGB(0x42, 0x10, 0x10, 0x10),
             spreadRadius: 6,
-            offset: Offset(-230, -10),
+            offset: Offset(dx,dy),
           ),
         ],
       ),

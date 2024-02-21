@@ -28,7 +28,7 @@ class FirstPage extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.7,
             ),
-            const CustomShadow(),
+            const CustomShadow(dx:-200 ,dy:-20 ),
           ],
         ),
         Column(
