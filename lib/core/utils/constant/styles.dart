@@ -1,8 +1,14 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-abstract class AppTextStyles{
-  static  TextStyle ralewayMediumTextStyle = TextStyle(
+abstract class AppTextStyles {
+  static const TextStyle ralewayW900 = TextStyle(
     fontFamily: 'Raleway',
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w900,
+    fontSize: 30,
+  );
+  static const TextStyle ralewayW600 = TextStyle(
+    fontFamily: 'Raleway',
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
   );
 }
