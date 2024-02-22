@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -33,13 +34,16 @@ class CustomTextOnFirstOnBoardingView extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.08,
                 ),
-                Text(
-                  AppText.welcome,
-                  maxLines: 2,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.ralewayW900.copyWith(
-                    color: AppColors.whiteColor,
-                    letterSpacing: 3,
+                FadeInDownBig(
+                  duration: const Duration(milliseconds: 500),
+                  child: Text(
+                    AppText.welcome,
+                    maxLines: 2,
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.ralewayW900.copyWith(
+                      color: AppColors.whiteColor,
+                      letterSpacing: 3,
+                    ),
                   ),
                 ),
               ],

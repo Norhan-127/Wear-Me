@@ -7,6 +7,7 @@ abstract class AppColors {
   static const Color dotsColor = Color(0xf12B6B8b);
   static const Color white = Colors.white;
   static const Color whiteColor = Color(0xfff7f7f9);
+  static const Color blackColor = Color(0xff2B2B2B);
   static LinearGradient gradient =  LinearGradient(
     begin: Alignment.topRight,
     end: Alignment.bottomRight,

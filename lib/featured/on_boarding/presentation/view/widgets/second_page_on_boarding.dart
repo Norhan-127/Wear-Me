@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
 import 'package:wear_me/core/utils/constant/text.dart';
@@ -48,16 +49,20 @@ class SecondPage extends StatelessWidget {
                 ),
               ],
             ),
-            const CustomImageWidget(image: AppImages.imageTwo),
+            FadeInDown(
+              duration: const Duration(milliseconds: 550),
+                child: const CustomImageWidget(image: AppImages.imageTwo)),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.435,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 100),
-                  child: CustomShadow(dx: -20, dy: -10),
+                 Padding(
+                  padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.3),
+                  child: FadeInUp(
+                    duration: const Duration(milliseconds: 600),
+                      child: const CustomShadow(dx: -20, dy: -10)),
                 ),
               ],
             ),

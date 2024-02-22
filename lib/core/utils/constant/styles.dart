@@ -15,8 +15,12 @@ abstract class AppTextStyles {
     fontFamily: 'Raleway',
     fontWeight: FontWeight.w700,
     fontSize: 34,
+  );static const TextStyle raleway14 = TextStyle(
+    fontFamily: 'Raleway',
+    fontWeight: FontWeight.w600,
+    fontSize: 14,
   );
-  static const TextStyle poppins = TextStyle(
+  static const TextStyle poppins400 = TextStyle(
     fontFamily: 'Poppins',
     fontWeight: FontWeight.w400,
     fontSize: 20,

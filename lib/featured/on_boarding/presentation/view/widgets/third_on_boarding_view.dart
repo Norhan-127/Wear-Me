@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
 import 'package:wear_me/core/utils/constant/text.dart';
@@ -28,19 +29,28 @@ class ThirdPageView extends StatelessWidget {
               ],
             ),
             Padding(
-              padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.07),
-              child: const CustomImageWidget(image: AppImages.circleVector,),
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width * 0.07),
+              child: const CustomImageWidget(
+                image: AppImages.circleVector,
+              ),
             ),
-            const CustomImageWidget(image: AppImages.imageThree,),
+            FadeInDown(
+                duration: const Duration(milliseconds: 550),
+                child: const CustomImageWidget(
+                  image: AppImages.imageThree,
+                )),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.435,
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 140),
-                  child: CustomShadow(dx: -20, dy: -35),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 140),
+                  child: FadeInUp(
+                      duration: const Duration(milliseconds: 550),
+                      child: const CustomShadow(dx: -20, dy: -35)),
                 ),
               ],
             ),

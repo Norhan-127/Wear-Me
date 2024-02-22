@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:wear_me/featured/on_boarding/presentation/view/widgets/back_ground_icons.dart';
 import 'package:wear_me/featured/on_boarding/presentation/view/widgets/custom_shadow.dart';
@@ -21,14 +22,22 @@ class FirstPage extends StatelessWidget {
             const CustomTextOnFirstOnBoardingView()
           ],
         ),
-        const FirstOnBoardingImg(),
+        FadeInRight(
+          duration: const Duration(milliseconds: 550),
+            child: const FirstOnBoardingImg()),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.7,
             ),
-            const CustomShadow(dx:-200 ,dy:-20 ),
+            FadeInLeft(
+              duration: const Duration(milliseconds: 550),
+              child: Padding(
+                padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.25),
+                child: const CustomShadow(dx:-60 ,dy:-10 ),
+              ),
+            ),
           ],
         ),
         Column(
@@ -66,11 +75,11 @@ class FirstPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: MediaQuery.of(context).size.height * 0.65,
             ),
             Padding(
-                padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.07),
+                padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.07),
                 child: const CustomBackGroundSmallImages(
                     image: AppImages.onBoardingLolo2)),
           ],
