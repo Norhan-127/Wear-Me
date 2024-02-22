@@ -68,7 +68,7 @@ class _CustomTwoTextState extends State<CustomTwoText> {
                 widget.secondText,
                 maxLines: 2,
                 textAlign: TextAlign.center,
-                style: AppTextStyles.poppins400.copyWith(
+                style: AppTextStyles.poppins20.copyWith(
                   color: AppColors.whiteColor,
                 ),
               ),

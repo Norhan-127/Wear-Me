@@ -11,6 +11,7 @@ abstract class AppImages {
   static const String smile = "assets/images/smile1.png";
   static const String smile2 = "assets/images/smile2.png";
   static const String circleVector = "assets/images/circle4.png";
+  static const String google = "assets/images/google.png";
 
 
 }
