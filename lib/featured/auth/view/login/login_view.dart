@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
 import 'package:wear_me/core/utils/constant/styles.dart';
 import 'package:wear_me/core/utils/constant/text.dart';
+import 'package:wear_me/featured/auth/view/widgets/custom_button_with_google.dart';
+import 'package:wear_me/featured/auth/view/widgets/email_text_form_field.dart';
 import 'package:wear_me/shared/widgets/custom_button.dart';
+import '../widgets/password_text_form_field.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+   LoginView({Key? key}) : super(key: key);
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.08,
+              height: MediaQuery.of(context).size.height * 0.04,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -55,6 +60,7 @@ class LoginView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Form(
+                key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -65,20 +71,7 @@ class LoginView extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      cursorColor: AppColors.grayColor,
-                      decoration: InputDecoration(
-                        hintText: AppText.xyz,
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintStyle: AppTextStyles.poppins14
-                            .copyWith(color: AppColors.grayColor),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+                    CustomEmailTextFormField(),
                     const SizedBox(
                       height: 15,
                     ),
@@ -89,20 +82,7 @@ class LoginView extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      cursorColor: AppColors.grayColor,
-                      decoration: InputDecoration(
-                        hintText: AppText.typePass,
-                        fillColor: AppColors.whiteColor,
-                        filled: true,
-                        hintStyle: AppTextStyles.poppins14
-                            .copyWith(color: AppColors.grayColor),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                          borderSide: BorderSide.none,
-                        ),
-                      ),
-                    ),
+                    CustomPasswordTextFormField(),
                     const SizedBox(
                       height: 5,
                     ),
@@ -121,7 +101,11 @@ class LoginView extends StatelessWidget {
                     ),
                     CustomButton(
                       txt: AppText.signIn,
-                      onTap: () {},
+                      onTap: () {
+                        if (_formKey.currentState!.validate()){
+                          _formKey.currentState!.save();
+                        }
+                      },
                       color: AppColors.mainColor,
                       txtStyle: AppTextStyles.raleway16
                           .copyWith(color: AppColors.whiteColor),
@@ -129,9 +113,11 @@ class LoginView extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    CustomButton(
+                    CustomButtonWithGoogle(
                       txt: AppText.signInWithGoogle,
-                      onTap: () {},
+                      onTap: () {
+
+                      },
                       color: AppColors.whiteColor,
                       txtStyle: AppTextStyles.raleway16,
                     ),

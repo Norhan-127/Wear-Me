@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constant/colors.dart';
@@ -40,18 +39,15 @@ class _CustomTwoTextState extends State<CustomTwoText> {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.12),
-          child: FadeInLeft(
-            duration: const Duration(milliseconds: 50),
-            child: AnimatedOpacity(
-              opacity: _opacity,
-              duration: const Duration(milliseconds: 100),
-              child: Text(
-                widget.firstText,
-                maxLines: 2,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.ralewayW700.copyWith(
-                  color: AppColors.whiteColor,
-                ),
+          child: AnimatedOpacity(
+            opacity: _opacity,
+            duration: const Duration(milliseconds: 100),
+            child: Text(
+              widget.firstText,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              style: AppTextStyles.ralewayW700.copyWith(
+                color: AppColors.whiteColor,
               ),
             ),
           ),
@@ -59,18 +55,15 @@ class _CustomTwoTextState extends State<CustomTwoText> {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.02935),
-          child: FadeInLeft(
-            duration: const Duration(milliseconds: 50),
-            child: AnimatedOpacity(
-              opacity: _opacity,
-              duration: const Duration(seconds: 1),
-              child: Text(
-                widget.secondText,
-                maxLines: 2,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.poppins20.copyWith(
-                  color: AppColors.whiteColor,
-                ),
+          child: AnimatedOpacity(
+            opacity: _opacity,
+            duration: const Duration(seconds: 1),
+            child: Text(
+              widget.secondText,
+              maxLines: 2,
+              textAlign: TextAlign.center,
+              style: AppTextStyles.poppins20.copyWith(
+                color: AppColors.whiteColor,
               ),
             ),
           ),

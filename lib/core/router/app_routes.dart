@@ -23,7 +23,7 @@ abstract class AppRouters {
     ),
     GoRoute(
       path: kLogin,
-      builder: (context, state) => const LoginView(),
+      builder: (context, state) =>  LoginView(),
     ),
   ]);
 }
