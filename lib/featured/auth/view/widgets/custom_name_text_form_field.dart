@@ -1,28 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:wear_me/core/utils/constant/text.dart';
+
 import '../../../../core/utils/constant/colors.dart';
 import '../../../../core/utils/constant/styles.dart';
-import '../../../../core/utils/constant/text.dart';
 
-class CustomPasswordTextFormField extends StatelessWidget {
-  CustomPasswordTextFormField({Key? key}) : super(key: key);
-  final RegExp passwordRegex = RegExp(r'^.{8,}$');
+class CustomNameTextFormField extends StatelessWidget {
+  const CustomNameTextFormField({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: true,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return AppText.plsEnterYourPassword;
-        } else if (!passwordRegex.hasMatch(value)) {
-          return AppText.plsEnterValidPass;
-        } else {
-          return null;
-        }
-      },
       cursorColor: AppColors.grayColor,
       decoration: InputDecoration(
-        hintText: AppText.typePass,
+        hintText: 'xxxxxxx',
         fillColor: AppColors.whiteColor,
         filled: true,
         hintStyle: AppTextStyles.poppins14.copyWith(color: AppColors.grayColor),
@@ -35,6 +25,13 @@ class CustomPasswordTextFormField extends StatelessWidget {
           borderSide: const BorderSide(color: AppColors.redColor),
         ),
       ),
+      validator: (value) {
+        if (value!.isEmpty) {
+          return AppText.plsEnterYourName;
+        } else {
+          return null;
+        }
+      },
       onSaved: (value) {},
     );
   }

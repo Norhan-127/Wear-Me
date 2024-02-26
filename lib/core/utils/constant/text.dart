@@ -13,12 +13,12 @@ abstract class AppText{
   static const passwordRecovery="Recovery Password";
   static const signIn="Sign In";
   static const signInWithGoogle="Sign In with Google";
-  static const signIUpWithGoogle="Sign Up with Google";
+  static const signUpWithGoogle="Sign Up with Google";
   static const newUser="New User?";
   static const createAnAccount="Create Account";
   static const registerAccount="Register Account";
   static const yourName="Your Name";
-  static const signup="Sign up";
+  static const signUp="Sign up";
   static const alreadyHaveAccount="Already Have Account?";
   static const logIn="Log In";
   static const forgotPassword="Forgot Password";
@@ -33,5 +33,10 @@ abstract class AppText{
   static const resendcodeto="Resend code to";
   static const xyz="xyz@gmail.com";
   static const typePass="Enter Your Password'";
+  static const plsEnterYourEmail="Please enter your email";
+  static const plsEnterYourPassword="Please enter your password";
+  static const plsEnterValidEmail='Please enter a valid email';
+  static const plsEnterValidPass='Password must be at least 8 characters long';
+  static const plsEnterYourName='Please enter your name';
 
 }

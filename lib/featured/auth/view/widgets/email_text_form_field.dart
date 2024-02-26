@@ -5,7 +5,9 @@ import '../../../../core/utils/constant/text.dart';
 
 class CustomEmailTextFormField extends StatelessWidget {
   CustomEmailTextFormField({Key? key}) : super(key: key);
-  final RegExp emailRegex = RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b');
+  final RegExp emailRegex =
+      RegExp(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b');
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -19,19 +21,21 @@ class CustomEmailTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           borderSide: BorderSide.none,
         ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(14),
+          borderSide: const BorderSide(color: AppColors.redColor),
+        ),
       ),
       validator: (value) {
         if (value!.isEmpty) {
-          return 'Please enter your email';
+          return AppText.plsEnterYourEmail;
         } else if (!emailRegex.hasMatch(value)) {
-          return 'Please enter a valid email';
+          return AppText.plsEnterValidEmail;
         } else {
           return null;
         }
       },
-      onSaved: (value) {
-
-      },
+      onSaved: (value) {},
     );
   }
 }
