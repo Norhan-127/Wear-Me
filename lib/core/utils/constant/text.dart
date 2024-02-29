@@ -38,5 +38,6 @@ abstract class AppText{
   static const plsEnterValidEmail='Please enter a valid email';
   static const plsEnterValidPass='Password must be at least 8 characters long';
   static const plsEnterYourName='Please enter your name';
+  static const verificationDone="Verification Has been done";
 
 }

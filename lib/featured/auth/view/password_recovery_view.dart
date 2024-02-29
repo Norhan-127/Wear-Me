@@ -91,6 +91,11 @@ class PasswordRecoveryView extends StatelessWidget {
                             );
                           },
                         );
+                        Future.delayed(const Duration(seconds: 4),
+                          () {
+                            GoRouter.of(context).pushReplacement(AppRouters.kOtp);
+                          },
+                        );
                       },
                       color: AppColors.mainColor,
                       txtStyle: AppTextStyles.raleway16

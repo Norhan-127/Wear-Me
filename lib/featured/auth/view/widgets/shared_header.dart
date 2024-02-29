@@ -35,7 +35,7 @@ class CustomSharedHeader extends StatelessWidget {
         ),
          Text(
           firstText,
-          style: AppTextStyles.ralewayW700,
+          style: AppTextStyles.raleway34w700,
           textAlign: TextAlign.center,
         ),
         Padding(

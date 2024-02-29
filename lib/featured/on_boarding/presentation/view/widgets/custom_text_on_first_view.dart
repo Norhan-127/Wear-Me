@@ -40,7 +40,7 @@ class CustomTextOnFirstOnBoardingView extends StatelessWidget {
                     AppText.welcome,
                     maxLines: 2,
                     textAlign: TextAlign.center,
-                    style: AppTextStyles.ralewayW900.copyWith(
+                    style: AppTextStyles.raleway30.copyWith(
                       color: AppColors.whiteColor,
                       letterSpacing: 3,
                     ),

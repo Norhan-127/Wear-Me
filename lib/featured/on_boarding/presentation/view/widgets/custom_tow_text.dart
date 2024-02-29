@@ -46,7 +46,7 @@ class _CustomTwoTextState extends State<CustomTwoText> {
               widget.firstText,
               maxLines: 2,
               textAlign: TextAlign.center,
-              style: AppTextStyles.ralewayW700.copyWith(
+              style: AppTextStyles.raleway34w700.copyWith(
                 color: AppColors.whiteColor,
               ),
             ),
