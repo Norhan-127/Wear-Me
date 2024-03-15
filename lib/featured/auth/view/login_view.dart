@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wear_me/core/router/app_routes.dart';
 import 'package:wear_me/core/utils/constant/colors.dart';
@@ -7,6 +8,7 @@ import 'package:wear_me/core/utils/constant/text.dart';
 import 'package:wear_me/featured/auth/view/widgets/custom_button_with_google.dart';
 import 'package:wear_me/featured/auth/view/widgets/email_text_form_field.dart';
 import 'package:wear_me/featured/auth/view/widgets/shared_header.dart';
+import 'package:wear_me/featured/auth/view_model/login_cubit/login_cubit.dart';
 import 'package:wear_me/shared/widgets/custom_button.dart';
 import 'widgets/password_text_form_field.dart';
 
@@ -22,11 +24,12 @@ class LoginView extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: ListView(
           children: [
-             CustomSharedHeader(
+            CustomSharedHeader(
               firstText: AppText.helloAgain,
               secondText: AppText.fillYourDetails,
-              onPressed: (){
-                return GoRouter.of(context).pushReplacement(AppRouters.kOnBoarding);
+              onPressed: () {
+                return GoRouter.of(context)
+                    .pushReplacement(AppRouters.kOnBoarding);
               },
             ),
             Padding(
@@ -54,7 +57,10 @@ class LoginView extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    CustomPasswordTextFormField(),
+                    BlocProvider(
+                      create: (context) => LoginCubit(),
+                      child: CustomPasswordTextFormField(),
+                    ),
                     const SizedBox(
                       height: 5,
                     ),
@@ -62,9 +68,10 @@ class LoginView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
-                           onTap: (){
-                             GoRouter.of(context).pushReplacement(AppRouters.kPasswordRecovery);
-                           },
+                          onTap: () {
+                            GoRouter.of(context)
+                                .pushReplacement(AppRouters.kPasswordRecovery);
+                          },
                           child: Text(
                             AppText.passwordRecovery,
                             style: AppTextStyles.poppins14

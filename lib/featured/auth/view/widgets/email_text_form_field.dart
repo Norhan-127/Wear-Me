@@ -11,6 +11,7 @@ class CustomEmailTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      keyboardType: TextInputType.emailAddress,
       cursorColor: AppColors.grayColor,
       decoration: InputDecoration(
         hintText: AppText.xyz,
